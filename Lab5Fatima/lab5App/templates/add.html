@@ -1,0 +1,24 @@
+{ % load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.CSS' %}">
+</head>
+<body>
+    <h1>Add Person</h1>
+    <form method="POST" action="{%url 'add' %}">
+        {% crf_token%}
+        <label for = "username">username:</label>
+        <input type="text" name="username">
+        <br/>
+
+        <label for = "password">password:</label>
+        <input type="text" name="password">
+        <br/>
+
+        <input type="submit" value="Submit">
+
+    </form>
+    <a href="{% url 'defaultPath'%}">View List Of People</a>
+</body>
+</html>
